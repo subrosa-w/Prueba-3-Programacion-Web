@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Vecinos Sector Mirasol</title>
+    <link rel="stylesheet" href="../CSS/style_form.css">
+    <link rel="icon" href="../assets/mirasol.png">
+    <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
+    <script src="../js/js.js"></script>
+</head>
+
+<body class="fondo">
+    <header>
+        <nav class="nav_bar">
+            <a href="../html/index.html">Inicio</a>
+            <a href="../html/noticias.html">Noticias</a>
+            <a href="../html/servicios.html">Servicios</a>
+            <a href="../html/proximamente.html">Carrito</a>
+            <a href="../html/formulario.html">Contactanos</a>
+        </nav>
+
+        <section class="info">
+            <img src="../assets/Proyecto nuevo.png" alt="Logo Mirasol" class="logo">
+
+        </section>
+
+    </header>
+    <main>
+        <section class="container-form">
+            <section class="in-flex">
+                <article class="info-form">
+                    <h2>Contáctanos</h2>
+                    <p>Escribanos todas tus dudas, consultas o quejas que tengas para asi poder mejorar</p>
+                    <a href="#"><i class="fa fa-phone"></i> 9 1234 5678</a>
+                    <a href="#"><i class="fa fa-envelope"></i> info.mirasol-conecta@gmail.com</a>
+                    <a href="#"><i class="fa fa-map-marked"></i> Puerto Montt, Mirasol</a>
+                </article>
+            </section>
+
+            <section class="in-flex">
+                <form action="#" autocomplete="off" onsubmit="return datos()">
+                    <input id="nombre" type="text" name="nombre" placeholder="Tu Nombre" class="campo">
+                    <h4 class="mensaje2" id="mensaje"></h4>
+                    <input id="mail" type="email" name="email" placeholder="Tu Email" class="campo">
+                    <input id="fono" type="number" name="numero" placeholder="Tu Numero" class="campo">
+                    <textarea id="mensaje" name="mensaje" placeholder="Tu Mensaje..."></textarea>
+                    <article>
+                        <input type="submit" name="enviar" value="Enviar Mensaje" class="btn-enviar">
+                        <h4 class="mensaje" id="mensaje2">
+                        </h4>
+                    </article>
+                </form>
+            </section>
+        </section>
+    </main>
+</body>
+
+</html>
