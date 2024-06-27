@@ -22,7 +22,6 @@
             <a href="{% url 'index' %}">Inicio</a>
             <a href="{% url 'noticias' %}">Noticias</a>
             <a href="{% url 'servicios' %}">Servicios</a>
-            <a href="{% url 'proximamente' %}">Carrito</a>
             <a href="{% url 'formulario' %}">Contactanos</a>
         </nav>
 
@@ -74,7 +73,7 @@
                         </div>
                     </div>
                     <div class="card">
-                        <img src="../assets/notice2.png" class="card-img-top" alt="...">
+                        <img src="{% url 'notice2.png' %}" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">"Se solicita extradicion"</h5>
                             <p class="card-text">A esta hora se confirma que se solicitó la ex tradición de sujeto
@@ -111,7 +110,7 @@
                         </div>
                     </div>
                     <div class="card">
-                        <img src="../assets/notice3.jpg" class="card-img-top" alt="...">
+                        <img src="{% url 'notice3.jpg' %}" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">"Perrita perdida"</h5>
                             <p class="card-text">El dia 13 de marzo entre las 7 y las 9 horas desparecio...</p>

@@ -18,15 +18,14 @@
     <header>
 
         <nav class="nav_bar">
-            <a href="../html/index.html">Inicio</a>
-            <a href="../html/noticias.html">Noticias</a>
-            <a href="../html/servicios.html">Servicios</a>
-            <a href="../html/proximamente.html">Carrito</a>
-            <a href="../html/formulario.html">Contactanos</a>
+            <a href="{% url 'index' %}">Inicio</a>
+            <a href="{% url 'noticias' %}">Noticias</a>
+            <a href="{% url 'servicios' %}">Servicios</a>
+            <a href="{% url 'formulario' %}">Contactanos</a>
         </nav>
 
         <section class="info">
-            <img src="../assets/Proyecto nuevo.png" alt="Logo Mirasol" class="logo">
+            <img src="{% static 'assets/Proyecto nuevo.png' %}" alt="Logo Mirasol" class="logo">
 
         </section>
 
@@ -38,23 +37,24 @@
                 <h2 class="info_2">Servicios</h2>
                 <article class="cards-containar">
                     <div class="card">
-                        <img src="../assets/service1.jpg" class="card-img-top" alt="...">
+                        <img src="{% url 'service1.jpg' %}" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">"Venta de curanto"</h5>
                             <p class="card-text">$7000 pesos</p>
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                                 data-bs-target="#myModal4">
-                                Agregar al carrito
+                                Info. contacto
                             </button>
                             <div class="modal" id="myModal4">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h4 class="modal-title">Proximamente</h4>
+                                            <h4 class="modal-title">Informacion</h4>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                                         </div>
                                         <div class="modal-body">
-                                            Proximamente disponible
+                                            Telefono: +56924536578<br>
+                                            Email: estebandiazb23@gmail.com
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-danger"
@@ -66,23 +66,24 @@
                         </div>
                     </div>
                     <div class="card">
-                        <img src="../assets/service2.jpeg" class="card-img-top" alt="...">
+                        <img src="{% url 'service2.jpeg' %}" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Venta de kuchen</h5>
                             <p class="card-text">Normal: $8000 pesos <br>Mixto: $10000 pesos</p>
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                                 data-bs-target="#myModal5">
-                                Agregar al carrito
+                                Info. contacto
                             </button>
                             <div class="modal" id="myModal5">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h4 class="modal-title">Proximamente</h4>
+                                            <h4 class="modal-title">Informacion</h4>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                                         </div>
                                         <div class="modal-body">
-                                            Proximamente disponible
+                                            Telefono: +56979473944<br>
+                                            Email: tomasvazques234@gmail.com
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-danger"
@@ -94,23 +95,24 @@
                         </div>
                     </div>
                     <div class="card">
-                        <img src="../assets/service3.jpg" class="card-img-top" alt="...">
+                        <img src="{% url 'service3.jpg' %}" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Tutorias</h5>
                             <p class="card-text">Valor hr: $25000 pesos</p>
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                                 data-bs-target="#myModal6">
-                                Agregar servicio
+                                Info. contacto
                             </button>
                             <div class="modal" id="myModal6">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h4 class="modal-title">Proximamente</h4>
+                                            <h4 class="modal-title">Informacion</h4>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                                         </div>
                                         <div class="modal-body">
-                                            Proximamente disponible
+                                            Telefono: +56934853758<br>
+                                            Email: mariagut@gmail.com
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-danger"
