@@ -20,6 +20,6 @@ from M_C.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('MirasonConecta/',include(MirasonlConecta.urls)),
+    path('MirasonConecta/',include(MirasolConecta.urls)),
     path('',index),
 ]
