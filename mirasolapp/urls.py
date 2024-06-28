@@ -11,7 +11,7 @@ urlpatterns = [
     path('formulario', views.formulario, name='formulario'),
 
     path('admin/', views.admin_view, name='admin'),
-    path('modificarServicio/', views.modificarServicio, name='modificarServicio'),
-    path('eliminarServicio/', views.eliminarServicio, name='eliminarServicio'),
+    path('modificarServicio/<id_servicio>', views.modificarServicio, name='modificarServicio'),
+    path('eliminarServicio/<id_servicio>', views.eliminarServicio, name='eliminarServicio'),
     path('agregarServicio/', views.agregarServicio, name='agregarServicio'),
 ]

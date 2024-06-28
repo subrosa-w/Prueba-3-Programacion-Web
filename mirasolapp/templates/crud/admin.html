@@ -36,8 +36,8 @@
                     <td>{{ servicio.telefono }}</td>
                     <td>{{ servicio.Email }}</td>
                     <td>
-                        <a href="{% url 'modificarServicio' %}">Modificar</a>
-                        <a href="{% url 'eliminarServicio' %}">Eliminar</a>
+                        <a href="{% url 'modificarServicio' servicio.id_servicio %}">Modificar</a>
+                        <a href="{% url 'eliminarServicio' servicio.id_servicio %}">Eliminar</a>
                     </td>
                 </tr>
                 {% endfor %}

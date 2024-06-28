@@ -84,18 +84,10 @@ def modificarServicio(request, id_servicio):
 
 
 def eliminarServicio(request, id_servicio):
-    servicio = get_object_or_404(Servicio, id_servicio=id_servicio)
-    if request.method == "POST":
-        servicio.delete()
-        mensaje = "OK, datos eliminados satisfactoriamente"
-        servicios = Servicio.objects.all()
-        context = {'servicios': servicios, 'mensaje': mensaje}
-        return render(request, 'crud/admin.html', context)
-    else:
-        context = {'servicio': servicio}
-        return render(request, 'crud/eliminarServicio.html', context)
+    servicio = get_object_or_404(Servicio,id_servicio=id_servicio)
+    servicio.delete()
 
-
+    return redirect('admin')
 
 def admin_view(request):
     servicios = Servicio.objects.all()
