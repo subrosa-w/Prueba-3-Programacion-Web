@@ -5,7 +5,7 @@ function inicia(){
 
     if(user== 'Alan' & pass== '1234'){
 
-    window.location="../templates/mirasolapp/index.html";
+    window.location="mirasolapp/index";
 
     }
     else{

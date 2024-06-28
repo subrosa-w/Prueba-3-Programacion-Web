@@ -1,11 +1,13 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="icon" href="../assets/mirasol.png">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="icon" href="{% static 'assets/mirasol.png' %}">
+    <script src="{% static 'js/js.js' %}"></script>
     <title>Vecinos Sector Mirasol</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -17,16 +19,15 @@
 
     <header>
 
-        <nav class="nav_bar">
-            <a href="../html/index.html">Inicio</a>
-            <a href="../html/noticias.html">Noticias</a>
-            <a href="../html/servicios.html">Servicios</a>
-            <a href="../html/proximamente.html">Carrito</a>
-            <a href="../html/formulario.html">Contactanos</a>
+        <nav class="nav_bar" style="background-color: #03045e;">
+            <a href="{% url 'index' %}">Inicio</a>
+            <a href="{% url 'noticias' %}">Noticias</a>
+            <a href="{% url 'servicios' %}">Servicios</a>
+            <a href="{% url 'formulario' %}">Contactanos</a>
         </nav>
 
         <section class="info">
-            <img src="../assets/Proyecto nuevo.png" alt="Logo Mirasol" class="logo">
+            <img src="{% static 'assets/Proyecto nuevo.png' %}" alt="Logo Mirasol" class="logo">
 
         </section>
 
@@ -39,7 +40,7 @@
                 
                 <article class="cards-containar my-4">
                     <div class="card">
-                        <img src="../assets/service1.jpg" class="card-img-top" alt="...">
+                        <img src="{% static 'assets/service1.jpg' %}" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">"Venta de curanto"</h5>
                             <p class="card-text">$7000 pesos</p>
@@ -67,7 +68,7 @@
                         </div>
                     </div>
                     <div class="card">
-                        <img src="../assets/service2.jpeg" class="card-img-top" alt="...">
+                        <img src="{% static 'assets/service2.jpeg' %}" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Venta de kuchen</h5>
                             <p class="card-text">Normal: $8000 pesos <br>Mixto: $10000 pesos</p>
@@ -95,7 +96,7 @@
                         </div>
                     </div>
                     <div class="card">
-                        <img src="../assets/service3.jpg" class="card-img-top" alt="...">
+                        <img src="{% static 'assets/service3.jpg' %}" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Tutorias</h5>
                             <p class="card-text">Valor hr: $25000 pesos</p>
