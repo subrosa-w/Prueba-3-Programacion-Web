@@ -9,4 +9,9 @@ urlpatterns = [
     path('noticias', views.noticias, name='noticias'),
     path('servicios', views.servicios, name='servicios'),
     path('formulario', views.formulario, name='formulario'),
+
+    path('admin/', views.admin_view, name='admin'),
+    path('modificarServicio/', views.modificarServicio, name='modificarServicio'),
+    path('eliminarServicio/', views.eliminarServicio, name='eliminarServicio'),
+    path('agregarServicio/', views.agregarServicio, name='agregarServicio'),
 ]

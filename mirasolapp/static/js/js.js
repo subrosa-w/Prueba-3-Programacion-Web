@@ -8,6 +8,7 @@ function inicia(){
     window.location="mirasolapp/index";
 
     }
+
     else{
 
       document.getElementById('mensaje3').textContent = "Usuario o Contraseña incorrecta" ;
