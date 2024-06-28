@@ -8,7 +8,7 @@ def index(request):
 
 def login(request):
     context = {}
-    return render(request, 'mirasolapp/login,html', context)
+    return render(request, 'mirasolapp/login.html', context)
 
 def formulario(request):
     context = {}
