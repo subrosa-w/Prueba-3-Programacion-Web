@@ -58,42 +58,13 @@ def agregarServicio(request):
 
 def modificarServicio(request, id_servicio):
     servicio = get_object_or_404(Servicio, id_servicio=id_servicio)
-    
-    if request.method == "POST":
-        titulo = request.POST.get("titulo")
-        valor = request.POST.get("valor")
-        telefono = request.POST.get("telefono")
-        Email = request.POST.get("Email")
-        imagen = request.FILES.get("imagen")
-        
-        servicio.titulo = titulo
-        servicio.valor = valor
-        servicio.telefono = telefono
-        servicio.Email = Email
-        if imagen:
-            servicio.imagen = imagen
-        
-        servicio.save()
-        
-        return redirect('admin')
-    
-    context = {
-        'servicio': servicio,
-    }
-    return render(request, 'crud/modificarServicio.html', context)
-
+    return render(request, 'crud/modificarServicio.html', {"servicio": servicio})
 
 def eliminarServicio(request, id_servicio):
     servicio = get_object_or_404(Servicio, id_servicio=id_servicio)
-    if request.method == "POST":
-        servicio.delete()
-        mensaje = "OK, datos eliminados satisfactoriamente"
-        servicios = Servicio.objects.all()
-        context = {'servicios': servicios, 'mensaje': mensaje}
-        return render(request, 'crud/admin.html', context)
-    else:
-        context = {'servicio': servicio}
-        return render(request, 'crud/eliminarServicio.html', context)
+    servicio.delete()
+
+    return redirect('admin') 
 
 
 
