@@ -66,7 +66,11 @@ def eliminarServicio(request, id_servicio):
 
     return redirect('admin') 
 
+def eliminarServicio(request, id_servicio):
+    servicio = get_object_or_404(Servicio,id_servicio=id_servicio)
+    servicio.delete()
 
+    return redirect('admin')
 
 def admin_view(request):
     servicios = Servicio.objects.all()
