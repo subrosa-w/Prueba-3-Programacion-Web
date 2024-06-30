@@ -55,9 +55,21 @@ def agregarServicio(request):
         return render(request, 'crud/agregarServicio.html', context)
 
 
-
 def modificarServicio(request, id_servicio):
     servicio = get_object_or_404(Servicio, id_servicio=id_servicio)
+    
+    if request.method == 'POST':
+        servicio.titulo = request.POST['titulo']
+        servicio.valor = request.POST['valor']
+        servicio.telefono = request.POST['telefono']
+        servicio.Email = request.POST['Email']
+        
+        if 'nueva_imagen' in request.FILES:
+            servicio.imagen = request.FILES['nueva_imagen']
+        
+        servicio.save()
+        return redirect('admin')  # Redirige a la página de administración después de guardar los cambios
+    
     return render(request, 'crud/modificarServicio.html', {"servicio": servicio})
 
 def eliminarServicio(request, id_servicio):

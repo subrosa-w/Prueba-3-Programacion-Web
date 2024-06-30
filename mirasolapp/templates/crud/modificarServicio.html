@@ -16,12 +16,27 @@
 </head>
 
 <body>
+
+    <header>
+
+        <nav class="nav_bar" style="background-color: #03045e;">
+            <a href="{% url 'index' %}">Inicio</a>
+            <a href="{% url 'noticias' %}">Noticias</a>
+            <a href="{% url 'servicios' %}">Servicios</a>
+            <a href="{% url 'formulario' %}">Contactanos</a>
+        </nav>
+
+        <section class="info">
+            <img src="{% static 'assets/Proyecto nuevo.png' %}" alt="Logo Mirasol" class="logo">
+        </section>
+
+    </header>
+
     <div class="container">
         <h1>Modificar Servicio</h1>
         <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
             
-            <!-- Campo oculto para enviar el método POST -->
             <input type="hidden" name="id_servicio" value="{{ servicio.id_servicio }}">
             
             <label for="titulo">Título:</label>
@@ -38,7 +53,7 @@
             
             <label for="imagen">Imagen actual:</label><br>
             {% if servicio.imagen %}
-                <img src="{{ servicio.imagen.url }}" alt="Imagen actual"><br><br>
+                <img src="{{ servicio.imagen.url }}" alt="Imagen actual" style="max-width: 200px;"><br><br>
             {% else %}
                 <p>No hay imagen asociada actualmente.</p><br>
             {% endif %}
@@ -53,3 +68,4 @@
 </body>
 
 </html>
+x
