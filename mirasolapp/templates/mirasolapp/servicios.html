@@ -18,46 +18,42 @@
 <body class="fondo">
 
     <header>
-
         <nav class="nav_bar" style="background-color: #03045e;">
             <a href="{% url 'index' %}">Inicio</a>
             <a href="{% url 'noticias' %}">Noticias</a>
             <a href="{% url 'servicios' %}">Servicios</a>
             <a href="{% url 'formulario' %}">Contactanos</a>
         </nav>
-
         <section class="info">
             <img src="{% static 'assets/Proyecto nuevo.png' %}" alt="Logo Mirasol" class="logo">
-
         </section>
-
     </header>
 
     <main>
         <section class="in-flex" style="background-color: #fff;">
             <h2 class="info_2 text-white" style="border-radius: 15px;">Servicios</h2>
             <section class="in-flex" style="background-color: #fff;">
-                
                 <article class="cards-containar my-4">
+                    {% for servicio in servicios %}
                     <div class="card">
-                        <img src="{% static 'assets/service1.jpg' %}" class="card-img-top" alt="...">
+                        <img src="{{ servicio.imagen.url }}" class="card-img-top" alt="{{ servicio.titulo }}">
                         <div class="card-body">
-                            <h5 class="card-title">"Venta de curanto"</h5>
-                            <p class="card-text">$7000 pesos</p>
+                            <h5 class="card-title">{{ servicio.titulo }}</h5>
+                            <p class="card-text">${{ servicio.valor }}</p>
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                data-bs-target="#myModal4">
+                                data-bs-target="#myModal{{ servicio.id_servicio }}">
                                 Info. Contacto
                             </button>
-                            <div class="modal" id="myModal4">
+                            <div class="modal" id="myModal{{ servicio.id_servicio }}">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h4 class="modal-title">Infomacion</h4>
+                                            <h4 class="modal-title">Información</h4>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                                         </div>
                                         <div class="modal-body">
-                                            Telefono: +56913384457<br>
-                                            Email: estebanparra@gamil.com
+                                            Teléfono: {{ servicio.telefono }}<br>
+                                            Email: {{ servicio.Email }}
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-danger"
@@ -68,64 +64,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card">
-                        <img src="{% static 'assets/service2.jpeg' %}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Venta de kuchen</h5>
-                            <p class="card-text">Normal: $8000 pesos <br>Mixto: $10000 pesos</p>
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                data-bs-target="#myModal5">
-                                Info. Contacto
-                            </button>
-                            <div class="modal" id="myModal5">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h4 class="modal-title">Informacion</h4>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            Telefono: +56938420759<br>
-                                            Email: mariaguti@gamil.com
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-danger"
-                                                data-bs-dismiss="modal">Cerrar</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img src="{% static 'assets/service3.jpg' %}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Tutorias</h5>
-                            <p class="card-text">Valor hr: $25000 pesos</p>
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                data-bs-target="#myModal6">
-                                Info. Contacto
-                            </button>
-                            <div class="modal" id="myModal6">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h4 class="modal-title">Informacion</h4>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            Telefono: +56998853847<br>
-                                            Email: cristobalvasquez@gamil.com
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-danger"
-                                                data-bs-dismiss="modal">Cerrar</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    {% endfor %}
                 </article>
             </section>
         </section>
