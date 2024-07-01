@@ -28,6 +28,10 @@ def servicios(request):
     servicios = Servicio.objects.all()
     return render(request, 'mirasolapp/servicios.html', {'servicios': servicios})
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> a5867fd89b862c93c1c6cf5d9f5fd47164572854
 def seleccionVista(request):
     context = {}
     return render(request, 'crud/seleccionVista.html', context)
