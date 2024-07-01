@@ -16,10 +16,8 @@ urlpatterns = [
     path('modificarServicio/<id_servicio>', views.modificarServicio, name='modificarServicio'),
     path('eliminarServicio/<id_servicio>', views.eliminarServicio, name='eliminarServicio'),
     path('agregarServicio/', views.agregarServicio, name='agregarServicio'),
-<<<<<<< HEAD
     path('seleccionVista/', views.seleccionVista, name='seleccionVista'),
     path('vistaServicios/', views.vistaServicios, name='vistaServicios'),
-=======
->>>>>>> bfa1f9dc6117d7bc1a011a2f423d6e2f99290ae2
 ]
+
 
