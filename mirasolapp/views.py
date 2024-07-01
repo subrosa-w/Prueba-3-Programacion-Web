@@ -20,9 +20,17 @@ def noticias(request):
     context = {}
     return render(request, 'mirasolapp/noticias.html', context)
 
-def servicios(request):
+def seleccionVista(request):
     context = {}
-    return render(request, 'mirasolapp/servicios.html', context)
+    return render(request, 'crud/seleccionVista.html', context)
+
+def servicios(request):
+    servicios = Servicio.objects.all()
+    return render(request, 'mirasolapp/servicios.html', {'servicios': servicios})
+
+def vistaServicios(request):
+    servicios = Servicio.objects.all()
+    return render(request, 'crud/vistaServicios.html', {'servicios': servicios})
 
 def agregarServicio(request):
     if request.method == "POST":

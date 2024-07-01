@@ -20,10 +20,9 @@
     <header>
 
         <nav class="nav_bar" style="background-color: #03045e;">
-            <a href="{% url 'index' %}">Inicio</a>
-            <a href="{% url 'noticias' %}">Noticias</a>
-            <a href="{% url 'servicios' %}">Servicios</a>
-            <a href="{% url 'formulario' %}">Contactanos</a>
+            <a href="{% url 'admin'%}" class="right">Volver a Administración</a> 
+            <a href="{% url 'noticias' %}">Vista Noticias</a>
+            <a href="{% url 'vistaServicios' %}">Vista Servicios</a>
         </nav>
 
         <section class="info">
@@ -63,7 +62,6 @@
             
             <input type="submit" value="Guardar cambios" class="btn btn-primary">
         </form>
-        <a href="{% url 'admin' %}" class="btn btn-secondary mt-3">Volver a la Administración</a>
     </div>
 </body>
 

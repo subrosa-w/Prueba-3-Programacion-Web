@@ -21,6 +21,15 @@ main{
     min-width: 250px;
 }
 
+.addservicio{
+    top: 50%;
+    left: 50%;
+    background-color: rgb(255, 255, 255);
+    padding: 50px;
+    text-align: left;
+}
+
+
 .in-flex:first-of-type{
     flex: 2;
     padding: 25px;
@@ -75,7 +84,7 @@ text-decoration: none;
 }
 
 .nav_bar a.right {
-float: right;
+float: left;
 }
 
 .nav_bar a:hover {
@@ -197,3 +206,4 @@ color: black;
     float: right;
     cursor: pointer;
 }
+

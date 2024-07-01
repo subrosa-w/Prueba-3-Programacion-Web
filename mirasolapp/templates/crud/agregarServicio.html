@@ -16,11 +16,23 @@
 </head>
 
 <body>
-    <div class="container">
+    <header>
+        <nav class="nav_bar" style="background-color: #03045e;">
+            <a href="{% url 'admin'%}" class="right">Volver a Administración</a> 
+            <a href="{% url 'noticias' %}">Vista Noticias</a>
+            <a href="{% url 'vistaServicios' %}">Vista Servicios</a>
+        </nav>
+        <section class="info">
+            <img src="{% static 'assets/Proyecto nuevo.png' %}" alt="Logo Mirasol" class="logo">
+        </section>
+    </header>
+
+
+
+    <div class="addservicio">
         <h1>Agregar Servicio</h1>
         <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
-            
             <label for="id_servicio">ID Servicio:</label>
             <input type="text" id="id_servicio" name="id_servicio"><br>
             
@@ -43,6 +55,11 @@
         </form>
         <a href="{% url 'admin' %}" class="btn btn-secondary mt-3">Volver a la Administración</a>
     </div>
+
+
 </body>
+<footer class="container-fluid text-white p-5 text-center" style="background-color: #03045e;">
+    <p>&copy;Todos los derechos reservados 2024.</p>
+</footer>
 
 </html>
