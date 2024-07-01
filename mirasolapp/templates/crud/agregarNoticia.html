@@ -36,11 +36,9 @@
             <section class="in-flex">
                 <form method="post" enctype="multipart/form-data">
                     {% csrf_token %}
-                    <input type="text" id="id_noticia" name="id_noticia" placeholder="ID Noticia" class="campo"
-                        required>
+                    <input type="text" id="id_noticia" name="id_noticia" placeholder="ID Noticia" class="campo" required>
                     <input type="text" id="titular" name="titular" placeholder="Titular" class="campo" required>
-                    <input type="text" id="breve_desc" name="breve_desc" placeholder="Breve Descripción" class="campo"
-                        required>
+                    <input type="text" id="breve_desc" name="breve_desc" placeholder="Breve Descripción" class="campo" required>
                     <textarea id="noticia" name="noticia" placeholder="Noticia" class="campo" required></textarea>
                     <input type="file" id="imagen" name="imagen" class="campo" required>
                     <input type="date" id="fecha" name="fecha" class="campo" required>
