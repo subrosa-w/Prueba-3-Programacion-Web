@@ -18,50 +18,41 @@
 <body class="fondo">
 
     <header>
-
         <nav class="nav_bar" style="background-color: #03045e;">
             <a href="{% url 'index' %}">Inicio</a>
             <a href="{% url 'noticias' %}">Noticias</a>
             <a href="{% url 'servicios' %}">Servicios</a>
             <a href="{% url 'formulario' %}">Contactanos</a>
         </nav>
-
         <section class="info">
             <img src="{% static 'assets/Proyecto nuevo.png' %}" alt="Logo Mirasol" class="logo">
-
         </section>
-
     </header>
 
     <main>
-        
-        <section class="in-flex" style="background-color: #fff;">
+        <section class="in-flex mt-3" style="background-color: #fff;">
+            <h2 class="info_2 text-white" style="border-radius: 15px;">Noticias</h2>
             <section class="in-flex" style="background-color: #fff;">
-                <h2 class="info_2 text-white" style="border-radius: 15px;">Noticias Recientes</h2>
-            </section>
-            <section class="info_index">
-                <article class="cards-containar">
+                <article class="cards-containar my-4 mt-3">
+                    {% for noticia in noticias %}
                     <div class="card">
-                        <img src="{% static 'assets/notice1.jpg' %}" class="card-img-top" alt="...">
+                        <img src="{{ noticia.imagen.url }}" class="card-img-top" alt="{{ noticia.titular }}">
                         <div class="card-body">
-                            <h5 class="card-title">"Robo con violencia"</h5>
-                            <p class="card-text">Procedimiento en Mirasol......Asalto a mano armada...</p>
+                            <h5 class="card-title">"{{ noticia.titular }}"</h5>
+                            <p class="card-text">${{ noticia.breve_desc }}</p>
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                data-bs-target="#myModal">
-                                Leer más
+                                data-bs-target="#myModal{{ noticia.id_noticia }}">
+                                Info. Contacto
                             </button>
-                            <div class="modal" id="myModal">
+                            <div class="modal" id="myModal{{ noticia.id_noticia }}">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h4 class="modal-title">"Robo con violencia"</h4>
+                                            <h4 class="modal-title">Información</h4>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                                         </div>
                                         <div class="modal-body">
-                                            Concurre Labocar a calle Crucero con Ebesperger.
-                                            Robo con violencia a colectivero quien está en riesgo vital.
-                                            Imputado y vehiculo (colectivo) ambos en la Subcom Mirasol.
-                                            Victima riesgo vital en hospital base.
+                                            {{ noticia.noticia }}
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-danger"
@@ -72,73 +63,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card">
-                        <img src="{% static 'assets/notice2.png' %}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">"Se solicita extradicion"</h5>
-                            <p class="card-text">A esta hora se confirma que se solicitó la ex tradición de sujeto
-                                colombiano
-                                implicado en la violenta muerte de sus suegros en mirasol...</p>
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                data-bs-target="#myModal2">
-                                Leer más
-                            </button>
-                            <div class="modal" id="myModal2">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h4 class="modal-title">"Se solicita extradicion"</h4>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            A esta hora se confirma que se solicitó la ex tradición de sujeto colombiano
-                                            implicado en la violenta muerte de sus suegros en mirasol negocio "donde la
-                                            Melisa".
-                                            El hecho conmociono a puerto Montt el 7 de agosto del 2023, donde se dio a
-                                            conocer que dn Eladio y su señora Elizabeth fueron a atacados igual que a su
-                                            hija Melisa por su Yerno extranjero de nombre Yesid Valencia qué estaba
-                                            prófugo y fue ubicado por la policía civil y ahora la fiscal regional Carmen
-                                            Gloria Wittwer solicitó la extracción y la detención del sujeto.
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-danger"
-                                                data-bs-dismiss="modal">Cerrar</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img src="{% static 'assets/notice3.jpg' %}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">"Perrita perdida"</h5>
-                            <p class="card-text">El dia 13 de marzo entre las 7 y las 9 horas desparecio...</p>
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                data-bs-target="#myModal3">
-                                Leer más
-                            </button>
-                            <div class="modal" id="myModal3">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h4 class="modal-title">"Perrita perdida"</h4>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            El dia 13 de marzo entre las 7 y las 9 horas desparecio la perrita de la
-                                            vecina Ingrid Casas la cual responde al nombre de Any en caso de verla
-                                            porfavor comunicarse a este numero +5695285XXXX
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-danger"
-                                                data-bs-dismiss="modal">Cerrar</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    {% endfor %}
                 </article>
             </section>
         </section>

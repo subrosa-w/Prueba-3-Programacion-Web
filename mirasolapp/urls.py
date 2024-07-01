@@ -11,15 +11,18 @@ urlpatterns = [
     path('servicios/', views.servicios, name='servicios'),
     path('formulario', views.formulario, name='formulario'),
 
-    #?path del admin
-    path('admin/', views.admin_view, name='admin'),
+    #?path del administrador
+    path('adminServicios/', views.adminServicios, name='adminServicios'),
     path('modificarServicio/<id_servicio>', views.modificarServicio, name='modificarServicio'),
     path('eliminarServicio/<id_servicio>', views.eliminarServicio, name='eliminarServicio'),
     path('agregarServicio/', views.agregarServicio, name='agregarServicio'),
-<<<<<<< HEAD
-    path('seleccionVista/', views.seleccionVista, name='seleccionVista'),
     path('vistaServicios/', views.vistaServicios, name='vistaServicios'),
-=======
->>>>>>> bfa1f9dc6117d7bc1a011a2f423d6e2f99290ae2
+    path('adminNoticias/', views.adminNoticias, name='adminNoticias'),
+    path('modificarNoticia/<str:id_noticia>/', views.modificarNoticia, name='modificarNoticia'),
+    path('eliminarNoticia/<str:id_noticia>', views.eliminarNoticia, name='eliminarNoticia'),
+    path('agregarNoticia/', views.agregarNoticia, name='agregarNoticia'),
+    path('vistaNoticias/', views.vistaNoticias, name='vistaNoticias'),
+    path('seleccionVista/', views.seleccionVista, name='seleccionVista'),
+    path('no/', views.noticia, name='noticia'),
 ]
 

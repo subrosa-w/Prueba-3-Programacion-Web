@@ -12,7 +12,7 @@ function inicia(){
   else{
     if(user== 'Benja' & pass== '4321'){
     
-      window.location="mirasolapp/admin/";
+    window.location="mirasolapp/seleccionVista";
 
     }
 
