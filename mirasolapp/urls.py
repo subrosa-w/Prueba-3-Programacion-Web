@@ -23,7 +23,6 @@ urlpatterns = [
     path('agregarNoticia/', views.agregarNoticia, name='agregarNoticia'),
     path('vistaNoticias/', views.vistaNoticias, name='vistaNoticias'),
     path('seleccionVista/', views.seleccionVista, name='seleccionVista'),
-    path('no/', views.noticia, name='noticia'),
 ]
 
 
