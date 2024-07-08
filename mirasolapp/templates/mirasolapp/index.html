@@ -33,6 +33,12 @@
 
     </header>
 
+    {% if usuario  != None %}
+        {{usuario}}
+    {% else %}
+        login
+    {% endif %}
+
     <main>
         <section class="in-flex" style="border-radius: 15px;">
             <section class="info_index">

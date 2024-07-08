@@ -5,7 +5,9 @@ from .models import Servicio, Noticia
 # Create your views here.
 
 def index(request):
-    context = {}
+    request.session["usuario"]="pico"
+    usuario =request.session["usuario"]
+    context = {'usuario':usuario}
     return render(request,'mirasolapp/index.html', context)
 
 def login(request):

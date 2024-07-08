@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path, include
 from . import views
 
 #Creamos una lista con URL
@@ -23,6 +23,9 @@ urlpatterns = [
     path('agregarNoticia/', views.agregarNoticia, name='agregarNoticia'),
     path('vistaNoticias/', views.vistaNoticias, name='vistaNoticias'),
     path('seleccionVista/', views.seleccionVista, name='seleccionVista'),
+
+    #SESSION
+    path("accounts/", include("django.contrib.auth.urls")),
 ]
 
 
