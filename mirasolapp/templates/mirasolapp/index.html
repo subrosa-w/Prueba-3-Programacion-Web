@@ -54,7 +54,12 @@
                                     {{user.username}}
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-dark">
-                                    <li><a class="dropdown-item" href="{% url 'logout' %}">Cerrar Secion</a></li>
+                                    <li>
+                                        <form method="POST" action="{% url 'logout' %}">
+                                            {% csrf_token %}
+                                            <button type="submit" class="btn btn-outline-light" style="border: none;background: none;">Cerrar Sesión</button>
+                                        </form>
+                                    </li>
                                 </ul>
                             </li>
                         </ul>

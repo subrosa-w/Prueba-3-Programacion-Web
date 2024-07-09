@@ -70,7 +70,7 @@ TEMPLATES = [
 ]
 
 LOGIN_REDIRECT_URL ="index"
-LOGOUT_REDIRECT_URL ="login"
+LOGOUT_REDIRECT_URL ="/"
 
 WSGI_APPLICATION = 'mirasolConecta.wsgi.application'
 

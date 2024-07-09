@@ -12,38 +12,47 @@ def index(request):
     context = {'usuario':usuario}
     return render(request,'mirasolapp/index.html', context)
 
+@login_required
 def login(request):
     context = {}
     return render(request, 'registration/login.html', context)
 
+@login_required
 def logout(request):
     context = {}
     return render(request, 'registration/logout.html', context)
 
+@login_required
 def formulario(request):
     context = {}
     return render(request, 'mirasolapp/formulario.html', context)
 
+@login_required
 def noticias(request):
     noticias = Noticia.objects.all()
     return render(request, 'mirasolapp/noticias.html', {'noticias': noticias})
 
+@login_required
 def vistaNoticias(request):
     noticias = Noticia.objects.all()
     return render(request, 'crud/vistaNoticias.html', {'noticias': noticias})
 
+@login_required
 def servicios(request):
     servicios = Servicio.objects.all()
     return render(request, 'mirasolapp/servicios.html', {'servicios': servicios})
 
+@login_required
 def seleccionVista(request):
     context = {}
     return render(request, 'crud/seleccionVista.html', context)
 
+@login_required
 def vistaServicios(request):
     servicios = Servicio.objects.all()
     return render(request, 'crud/vistaServicios.html', {'servicios': servicios})
 
+@login_required
 def agregarNoticia(request):
     if request.method == "POST":
         id_noticia = request.POST.get("id_noticia")
@@ -73,7 +82,8 @@ def agregarNoticia(request):
     else:
         context = {}
         return render(request, 'crud/agregarNoticia.html', context)
-    
+ 
+@login_required   
 def agregarServicio(request):
     if request.method == "POST":
         id_servicio = request.POST.get("id_servicio")
@@ -106,6 +116,7 @@ def agregarServicio(request):
 
 
 
+@login_required
 def modificarNoticia(request, id_noticia):
     noticia = get_object_or_404(Noticia, id_noticia=id_noticia)
     
@@ -125,6 +136,7 @@ def modificarNoticia(request, id_noticia):
 
 
 
+@login_required
 def modificarServicio(request, id_servicio):
     servicio = get_object_or_404(Servicio, id_servicio=id_servicio)
     
@@ -142,23 +154,27 @@ def modificarServicio(request, id_servicio):
     
     return render(request, 'crud/modificarServicio.html', {"servicio": servicio})
 
+@login_required
 def eliminarServicio(request, id_servicio):
     servicio = get_object_or_404(Servicio, id_servicio=id_servicio)
     servicio.delete()
 
     return redirect('adminServicios') 
 
+@login_required
 def eliminarNoticia(request, id_noticia):
     noticia = get_object_or_404(Noticia, id_noticia=id_noticia)
     noticia.delete()
 
     return redirect('adminNoticias') 
 
+@login_required
 def adminNoticias(request):
     noticias = Noticia.objects.all()
     context = {'noticias': noticias}
     return render(request, 'crud/adminNoticias.html', context)
 
+@login_required
 def adminServicios(request):
     servicios = Servicio.objects.all()
     context = {'servicios': servicios}
