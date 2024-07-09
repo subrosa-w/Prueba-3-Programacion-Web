@@ -1,18 +1,24 @@
 from django.shortcuts import render, redirect, get_object_or_404
 import uuid
-from .models import Servicio, Noticia 
+from .models import Servicio, Noticia
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
+@login_required
 def index(request):
-    request.session["usuario"]="pico"
+    request.session["usuario"]="USUARIO"
     usuario =request.session["usuario"]
     context = {'usuario':usuario}
     return render(request,'mirasolapp/index.html', context)
 
 def login(request):
     context = {}
-    return render(request, 'mirasolapp/login.html', context)
+    return render(request, 'registration/login.html', context)
+
+def logout(request):
+    context = {}
+    return render(request, 'registration/logout.html', context)
 
 def formulario(request):
     context = {}

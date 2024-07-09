@@ -23,6 +23,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('mirasolapp/',include('mirasolapp.urls')),
     path('',login),
+
+    path("accounts/",include("django.contrib.auth.urls")),
 ]
 
 if settings.DEBUG:

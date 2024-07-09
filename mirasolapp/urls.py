@@ -26,6 +26,7 @@ urlpatterns = [
 
     #SESSION
     path("accounts/", include("django.contrib.auth.urls")),
+    path("logout/", views.logout, name='logout'),
 ]
 
 
