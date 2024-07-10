@@ -5,7 +5,6 @@ from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
-@login_required
 def index(request):
     request.session["usuario"]="USUARIO"
     usuario =request.session["usuario"]
@@ -22,12 +21,10 @@ def logout(request):
     context = {}
     return render(request, 'registration/logout.html', context)
 
-@login_required
 def formulario(request):
     context = {}
     return render(request, 'mirasolapp/formulario.html', context)
 
-@login_required
 def noticias(request):
     noticias = Noticia.objects.all()
     return render(request, 'mirasolapp/noticias.html', {'noticias': noticias})
@@ -37,7 +34,6 @@ def vistaNoticias(request):
     noticias = Noticia.objects.all()
     return render(request, 'crud/vistaNoticias.html', {'noticias': noticias})
 
-@login_required
 def servicios(request):
     servicios = Servicio.objects.all()
     return render(request, 'mirasolapp/servicios.html', {'servicios': servicios})
@@ -55,23 +51,15 @@ def vistaServicios(request):
 @login_required
 def agregarNoticia(request):
     if request.method == "POST":
-        id_noticia = request.POST.get("id_noticia")
         titular = request.POST.get("titular")
         breve_desc = request.POST.get("breve_desc")
         noticia = request.POST.get("noticia")
-        fecha = request.POST.get("fecha")
         imagen = request.FILES.get("imagen")
 
-        if Noticia.objects.filter(id_noticia=id_noticia).exists():
-            context = {'error': 'ID de noticia ya existe, por favor ingrese un ID único'}
-            return render(request, 'crud/agregarNoticia.html', context)
-
         noticia = Noticia(
-            id_noticia=id_noticia,
             titular=titular,
             breve_desc=breve_desc,
             noticia=noticia,
-            fecha=fecha,
             imagen=imagen
         )
 
@@ -80,25 +68,18 @@ def agregarNoticia(request):
         context = {'mensaje': 'OK, datos guardados con éxito'}
         return render(request, 'crud/noticia.html', context)
     else:
-        context = {}
-        return render(request, 'crud/agregarNoticia.html', context)
+        return render(request, 'crud/agregarNoticia.html')
  
 @login_required   
 def agregarServicio(request):
     if request.method == "POST":
-        id_servicio = request.POST.get("id_servicio")
         titulo = request.POST.get("titulo")
         valor = request.POST.get("valor")
         telefono = request.POST.get("telefono")
         Email = request.POST.get("Email")
         imagen = request.FILES.get("imagen")
 
-        if Servicio.objects.filter(id_servicio=id_servicio).exists():
-            context = {'error': 'ID de servicio ya existe, por favor ingrese un ID único'}
-            return render(request, 'crud/agregarServicio.html', context)
-
         servicio = Servicio(
-            id_servicio=id_servicio,
             titulo=titulo,
             valor=valor,
             telefono=telefono,
@@ -111,8 +92,7 @@ def agregarServicio(request):
         context = {'mensaje': 'OK, datos guardados con éxito'}
         return render(request, 'crud/servicio.html', context)
     else:
-        context = {}
-        return render(request, 'crud/agregarServicio.html', context)
+        return render(request, 'crud/agregarServicio.html')
 
 
 
@@ -124,7 +104,6 @@ def modificarNoticia(request, id_noticia):
         noticia.titular = request.POST['titular']
         noticia.breve_desc = request.POST['breve_desc']
         noticia.noticia = request.POST['noticia']
-        noticia.fecha = request.POST['fecha']
         
         if 'nueva_imagen' in request.FILES:
             noticia.imagen = request.FILES['nueva_imagen']
