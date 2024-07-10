@@ -1,0 +1,8 @@
+En la esquina superior deracha hay 3 lineas
+al precionarlo se expandirara y al precionar Administracion
+aparecera un login:
+
+datos de acceso login:
+
+usuario: alan
+contraseña: 1234
