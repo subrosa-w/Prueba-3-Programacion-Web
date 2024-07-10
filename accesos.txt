@@ -1,4 +1,4 @@
-En la esquina superior deracha hay 3 lineas
+En la esquina superior derecha hay 3 lineas
 al precionarlo se expandirara y al precionar Administracion
 aparecera un login:
 
