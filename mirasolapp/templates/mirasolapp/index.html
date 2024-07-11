@@ -21,7 +21,7 @@
 
         <nav class="navbar navbar-dark" style="background-color: #3378b9;">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Bienvenido {{user.username}}</a>
+                <a class="navbar-brand" href="#"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
                     data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar"
                     aria-label="Toggle navigation">
@@ -49,22 +49,7 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="{% url 'formulario' %}">Formulario</a>
                                 </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                        aria-expanded="false">
-                                        {{user.username}}
-                                    </a>
-                                    <ul class="dropdown-menu dropdown-menu" style="background-color: #3378b9;">
-                                        <li>
-                                            <form method="POST" action="{% url 'logout' %}">
-                                                {% csrf_token %}
-                                                <button type="submit" class="btn btn-outline-light"
-                                                    style="border: none;background: none;">Cerrar Sesión
-                                                </button>
-                                            </form>
-                                        </li>
-                                    </ul>
-                                </li>
+                                
                             </ul>
                         </div>
                         <div class="mt-auto">

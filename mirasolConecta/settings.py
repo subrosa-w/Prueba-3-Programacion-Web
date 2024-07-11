@@ -51,6 +51,8 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+SESSION_COOKIE_AGE = 1209600
+
 ROOT_URLCONF = 'mirasolConecta.urls'
 
 TEMPLATES = [

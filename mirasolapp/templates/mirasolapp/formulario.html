@@ -19,7 +19,7 @@
     <header>
         <nav class="navbar navbar-dark" style="background-color: #3378b9;">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Bienvenido {{user.username}}</a>
+                <a class="navbar-brand" href="#"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
                     data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar"
                     aria-label="Toggle navigation">
@@ -47,28 +47,14 @@
                                 <li class="nav-item">
                                     <a class="nav-link active" aria-current="page" href="#">Formulario</a>
                                 </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                        aria-expanded="false">
-                                        {{user.username}}
-                                    </a>
-                                    <ul class="dropdown-menu dropdown-menu" style="background-color: #3378b9;">
-                                        <li>
-                                            <form method="POST" action="{% url 'logout' %}">
-                                                {% csrf_token %}
-                                                <button type="submit" class="btn btn-outline-light"
-                                                    style="border: none;background: none;">Cerrar Sesión
-                                                </button>
-                                            </form>
-                                        </li>
-                                    </ul>
-                                </li>
+                                
                             </ul>
                         </div>
                         <div class="mt-auto">
                             <ul class="navbar-nav">
                                 <li class="nav-item">
-                                    <a class="btn btn-outline-light" style="float: right;" href="{% url 'login' %}">Administracion</a>
+                                    <a class="btn btn-outline-light" style="float: right;"
+                                        href="{% url 'login' %}">Administracion</a>
                                 </li>
                             </ul>
                         </div>
@@ -88,7 +74,8 @@
             <section class="in-flex">
                 <article class="info-form">
                     <h2>Contáctanos</h2>
-                    <p>Escribanos todas tus dudas, consultas o quejas que tengas para asi poder mejorar</p>
+                    <p>Este espacio está dedicado a recibir tus dudas, consultas o quejas. Además, puedes enviarnos los
+                        servicios que desees promocionar para agregarlos a nuestra página.</p>
                     <a href="#"><i class="fa fa-phone"></i> 9 1234 5678</a>
                     <a href="#"><i class="fa fa-envelope"></i> info.mirasol-conecta@gmail.com</a>
                     <a href="#"><i class="fa fa-map-marked"></i> Puerto Montt, Mirasol</a>
