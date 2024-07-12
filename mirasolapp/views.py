@@ -11,7 +11,6 @@ def index(request):
     context = {'usuario':usuario}
     return render(request,'mirasolapp/index.html', context)
 
-@login_required
 def login(request):
     context = {}
     return render(request, 'registration/login.html', context)

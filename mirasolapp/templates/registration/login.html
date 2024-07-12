@@ -14,12 +14,15 @@
 
 <body style="background-color:  #3378b9;">
     <div class="main">
-        <h1> Inicio de Sesion</h1>
+        <h1 class="m-4"> Inicio de Sesion</h1>
         <form action="{% url 'login' %}" method="post">
-            <div class="">
+            <div>
                 {% csrf_token %}
                 {{ form.as_p }}
+            </div>
+            <div class="d-grid gap-2 col-6 mx-auto mt-4">
                 <button type="submit" class="btn btn-outline-primary">Log in</button>
+                <a class="btn btn-outline-primary" href="{% url 'index' %}">Volver al inicio</a>
             </div>
         </form>
     </div>
