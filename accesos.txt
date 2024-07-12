@@ -1,8 +1,19 @@
-En la esquina superior derecha hay 3 lineas
-al precionarlo se expandirara y al precionar Administracion
-aparecera un login:
+- En la esquina superior derecha hay 3 lineas
+al precionarlo se expandirara y al precionar el
+boton  Administracion aparecera un login.
+
+- Ambos usuario pueden hacer lo mismo, se crearon dos para que
+se pueda verificar los cambios en el mensaje de bienvenida en
+esquina superior izquierda.
 
 datos de acceso login:
 
+- Usuario 1
+
 usuario: alan
+contraseña: 1234
+
+- Usuario 2
+
+usuario: ignacio
 contraseña: 1234
